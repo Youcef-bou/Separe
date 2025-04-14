@@ -1,0 +1,3 @@
+flask
+spleeter
+tensorflow==2.5.0
