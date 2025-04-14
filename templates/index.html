@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>فصل الصوت - Spleeter</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>فصل الصوت إلى 4 مسارات</h2>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="audio" accept=".mp3,.wav" required>
+            <button type="submit">رفع وبدء الفصل</button>
+        </form>
+        <p class="note">سيتم تحميل ملف مضغوط يحتوي على المسارات المنفصلة</p>
+    </div>
+</body>
+</html>
